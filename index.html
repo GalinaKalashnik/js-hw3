@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js hw3</title>
+	</head>
+	<body>
+	<script>
+
+	//1 перемножить числа друг на друга из агрумента
+	// function multiply(){
+	// 	var a = 0;
+	// 	if(arguments.length > 0){
+	// 		a = 1;
+	// 		for(var i = 0; i < arguments.length; i++){
+	// 			a *= arguments[i];
+	// 		}
+	// 	}
+	// 	return a;
+	// }
+	// var b = multiply(2, 2, 2);
+	// document.write(b);
+	
+
+	//2 вычеслить факториал через рекурсию
+
+	// function fact(n){
+	// 	var result = 1;
+	// 	if(n > 0){
+	// 		result = n * fact(n - 1);
+	// 	}
+	// 	return result;
+	// }
+	// var resFact = fact(10);
+	// document.write(resFact);
+
+
+
+
+	// 3 строка перевертыш
+	function back(){
+		var reversStr = "test";
+		for(var i = reversStr.length; i--;){
+      		document.write(reversStr[i]);
+		}
+	};
+	back();
+
+
+	//4 получить юникод строки с пробелами между номерами
+
+// var string = "hellow"
+// 	function uniStr(string, uni){
+// 		var newString = "";
+// 		for(var i = 0; i < string.length; i++){
+// 			newString += uni(string.charCodeAt(i));
+// 		}
+// 		return newString;
+// 	}
+
+// 	function callback(unicode){
+// 		return unicode + " ";
+// 	}
+
+// 	var resultCallBack = uniStr(string, callback);
+// 	document.write(resultCallBack);
+
+
+
+
+
+	// var string = "104 101 108 108 111 119";
+
+	// function uniStr(string, uni){
+	// 	var newString = "";
+	// 	stringToNum = 0;
+	// 	var switchSymbol;
+	// 	for(var i=0; i<string.length; i++){
+	// 		stringToNum -=  string[i];
+	// 		var type = typeof(stringToNum);
+	// 		if (type == 'number') {	
+	// 			switchSymbol = true;
+	// 			break;
+	// 		};
+	// 	}
+	// 	if (switchSymbol == true) {
+	// 		for(var i = 0; i < string.length; i++){
+	// 			newString += uni(String.fromCharCode(string[i]));
+	// 		}
+	// 	};
+	// 	// for(var i = 0; i < string.length; i++){
+	// 	// 	newString += uni(string.charCodeAt(i));
+	// 	// }
+	// 	return newString;
+	// }
+
+	// function callback(unicode){
+	// 	return unicode + " ";
+	// }
+
+	// var resultCallBack = uniStr(string, callback);
+	// document.write(resultCallBack);
+
+
+	//5 написать функцию-рекурсию, которая выведет каждый символ строки в консоль на следующую строку
+
+	// function transfer(str){
+		
+	// 	if(str.lenght > 0){
+	// 		document.write(str[0] + "<br>");
+	// 		transfer(str.slice(1));
+	// 	}
+	// };
+	// transfer("test");
+
+	//6-1
+
+	// function getStringFromArr(arr, func){
+	// 	var result = "New value: ";
+	// 	for(var i = 0; i < arr.length; i++){
+	// 		result += func(arr[i]);
+	// 	}
+	// 	return result;
+	// }
+	// function firstLetterUpper(n){
+	// 	var result = "";
+	// 	for(var i = 0; i < n.length; i++){
+	// 		if(i == 0){
+	// 			result += n[i].toUpperCase();
+	// 		} else{
+	// 			result += n[i];
+	// 		}
+	// 	}
+	// 	return result;
+	// }
+	
+
+
+	//6-2
+
+	// function getNumberStringFromArr(arr, func){
+	// 	var result = "New value: ";
+	// 	for(var i = 0; i < arr.length; i++){
+	// 		result += func(arr[i]);
+	// 	}
+	// 	return result;
+	// }
+	// function multiplyNumber(n){
+	// 	n *= 10;
+	// 	return n + ', ';
+	// }
+	// var getNumberStringFromArrRes = getNumberStringFromArr([10, 20, 30], multiplyNumber);
+	// document.write(getNumberStringFromArrRes);
+
+	//6-3
+
+	function getObjectStringFromArr(arr, func){
+		var result = "New value: ";
+		for(var i = 0; i < arr.length; i++){ /*как сделать что б запятая была только после первого аrr объекта*/
+			result += func(arr[i]) + ', ';
+		}
+		return result;
+	}
+	function newString(n){
+		var string = n.name + " is " + n.age;
+		return string;
+	}
+	var getObjectStringFromArrRes = getObjectStringFromArr([{age: 45, name: 'Jhon'}, {age: 20, name: 'Aron'}], newString);
+	document.write(getObjectStringFromArrRes);
+
+	//6-4
+
+	// function getStringBackFromArr(arr, func){
+	// 	var result = 'New value: ';
+	// 	for(var i = 0; i < arr.length; i++){
+	// 		result += func(arr[i]) + ', ';
+	// 	}
+	// 	return result;
+	// }
+	// function backString(s){
+	// 	var string = "";
+	// 	for(var i = s.length; i--;){
+	// 		string += s[i];
+	// 	}
+	// 	return string;
+	// }
+	// var getStringBackFromArrRes = getStringBackFromArr(['abc', '123'], backString);
+	// document.write(getStringBackFromArrRes);
+
+
+	//6 все вместе
+
+	// function highFunc(arr,settings){
+	// 	if (settings == "toUpper") {
+	// 		var result = "New value: ";
+	// 			for(var i = 0; i < arr.length; i++){
+	// 				result += firstLetterUpper(arr[i]);
+	// 			}
+	// 		return result;
+	// 	};
+	// 	if(settings == 'ymno'){
+	// 		var result = "New value: ";
+	// 		for(var i = 0; i < arr.length; i++){
+	// 			result += multiplyNumber(arr[i]);
+	// 		}
+	// 		return result;
+	// 	};
+	// 	if(settings == 'getValFromArr'){
+	// 		var result = "New value: ";
+	// 		for(var i = 0; i < arr.length; i++){ /*как сделать что б запятая была только после первого аrr объекта*/
+	// 			result += newString(arr[i]) + ', ';
+	// 		}
+	// 		return result;
+	// 	};
+	// 	if(settings == 'getBackStringFromArr'){
+	// 		var result = 'New value: ';
+	// 		for(var i = 0; i < arr.length; i++){
+	// 			result += backString(arr[i]) + ', ';
+	// 		}
+	// 		return result;
+	// 	};
+	// 	if(settings == 'plus'){
+	// 		var result = "New value: ";
+	// 		for(var i = 0; i < arr.length; i++){
+	// 			result += getPlusToArr(arr[i]);
+	// 		}
+	// 		return result;
+	// 	};
+	// 	function firstLetterUpper(n){
+	// 		var result = "";
+	// 		for(var i = 0; i < n.length; i++){
+	// 			if(i == 0){
+	// 				result += n[i].toUpperCase();
+	// 			} else{
+	// 				result += n[i];
+	// 			}
+	// 		}
+	// 		return result;
+	// 	};
+	// 	function multiplyNumber(n){
+	// 		n *= 10;
+	// 		return n + ', ';
+	// 	};
+	// 	function newString(n){
+	// 		var string = n.name + " is " + n.age;
+	// 		return string;
+	// 	};
+	// 	function backString(s){
+	// 		var string = "";
+	// 		for(var i = s.length; i--;){
+	// 			string += s[i];
+	// 		}
+	// 		return string;
+	// 	};
+	// 	function getPlusToArr(n){
+	// 		n += 5;
+	// 		return n + ', ';
+	// 	};
+	// }
+
+	// var getStringFromArrRes = highFunc(['my', 'name', 'is', 'Trinity'], "toUpper");
+	// document.write(getStringFromArrRes);
+	// document.write('<br/>')
+
+	// var getNumberStringFromArrRes = highFunc([10, 20, 30], 'ymno');
+	// document.write(getNumberStringFromArrRes);
+	// document.write('<br/>')
+
+	// var getObjectStringFromArrRes = highFunc([{age: 45, name: 'Jhon'}, {age: 20, name: 'Aron'}], 'getValFromArr');
+	// document.write(getObjectStringFromArrRes);
+	// document.write('<br/>')
+
+	// var getStringBackFromArrRes = highFunc(['abc', '123'], 'getBackStringFromArr');
+	// document.write(getStringBackFromArrRes);
+	// document.write('<br/>')
+
+	// var getPlusFromArrRes = highFunc([1, 2, 3], 'plus');
+	// document.write(getPlusFromArrRes);
+	// document.write('<br/>')
+
+
+
+
+	// простой калькулятор
+	// function calculator(obj){
+	// 	for(var i = 0; i < obj.length; i++){
+	// 		var res = 0;
+	// 		switch(obj[i].toDo){
+	// 			case "+":
+	// 				res = obj[i].arg1 + obj[i].arg2;
+	// 				document.write("Cложениe " + obj[i].arg1 + " и " + obj[i].arg2 + " = " + res + "<br>");
+	// 				break;
+	// 			case "-":
+	// 				res = obj[i].arg1 - obj[i].arg2;
+	// 				document.write("Вычетание " + obj[i].arg1 + " и " + obj[i].arg2 + " = " + res + "<br>");
+	// 				break;
+	// 			case "*":
+	// 				res = obj[i].arg1 * obj[i].arg2;
+	// 				document.write("Умножение " + obj[i].arg1 + " и " + obj[i].arg2 + " = " + res + "<br>");
+	// 				break;
+	// 			case "/":
+	// 				res = obj[i].arg1 / obj[i].arg2;
+	// 				document.write("Деление " + obj[i].arg1 + " и " + obj[i].arg2 + " = " + res + "<br>");
+	// 				break;
+	// 			default: "нет данных";
+	// 		}
+	// 	}
+	// }
+	// var dataCalculator = [{arg1: 1, arg2: 5, toDo: "+"}, {arg1: 6, arg2: 4, toDo: "-"}, {arg1: 10, arg2: 20, toDo: "*"}, {arg1: 20, arg2: 4, toDo: "/"}];
+	// calculator(dataCalculator);
+
+
+	</script>
+	</body>
+</html>
